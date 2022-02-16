@@ -1,0 +1,19 @@
+platform :ios, '10.0'
+use_frameworks!
+
+workspace 'ios-applovinmax-mediation-sample'
+
+#def ios_applovinmax_mediation_pods
+#  podspec :path => '../ios_applovinmax_mediation/startio-applovinmax-mediation.podspec'
+#end
+
+target 'ios-applovinmax-mediation-sample' do
+  #  ios_admob_mediation_pods
+  pod 'AppLovinSDK'
+  pod 'StartAppSDK', '~> 4.7.0'
+end
+
+#target 'StartioAdmobMediation' do
+#  project '../ios-admob-mediation/StartioAdmobMediation.xcodeproj'
+#  ios_admob_mediation_pods
+#end
