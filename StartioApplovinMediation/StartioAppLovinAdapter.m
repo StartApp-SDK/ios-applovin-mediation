@@ -21,7 +21,7 @@
 #import "StartioAppLovinNativeAdapter.h"
 #import <StartApp/StartApp.h>
 
-static NSString * const kAdapterVersion = @"1.0.0";
+static NSString * const kAdapterVersion = @"1.0.1";
 
 static NSString * const kAppIdKey = @"app_id";
 
