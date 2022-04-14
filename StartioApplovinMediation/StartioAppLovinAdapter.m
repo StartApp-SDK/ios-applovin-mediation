@@ -54,17 +54,24 @@ static NSString * const kAppIdKey = @"app_id";
 }
 
 - (void)setupStartioSDKWithAppID:(NSString *)appID parameters:(id<MAAdapterInitializationParameters>)parameters {
-    [STAStartAppSDK sharedInstance].appID = appID;
+    STAStartAppSDK *sdk = [STAStartAppSDK sharedInstance];
     
-    if (parameters.ageRestrictedUser.boolValue) {
-        STASDKPreferences *prefs = [[STASDKPreferences alloc] init];
-        prefs.age = parameters.ageRestrictedUser.unsignedIntegerValue;
-        [[STAStartAppSDK sharedInstance] setPreferences:prefs];
-    }
+    sdk.appID = appID;
+    [sdk handleExtras:^(NSMutableDictionary<NSString *,id> *extras) {
+        if (parameters.hasUserConsent) {
+            extras[@"medPas"] = parameters.hasUserConsent;
+        }
+        
+        if (parameters.ageRestrictedUser) {
+            extras[@"medAgeRestrict"] = parameters.ageRestrictedUser;
+        }
+        
+        if (parameters.doNotSell) {
+            extras[@"medCCPA"] = parameters.doNotSell;
+        }
+    }];
     
-    [[STAStartAppSDK sharedInstance] setUserConsent:parameters.hasUserConsent.boolValue forConsentType:@"pas" withTimestamp:[NSDate timeIntervalSinceReferenceDate]];
-    
-    [[STAStartAppSDK sharedInstance] addWrapperWithName:@"AppLovin" version:kAdapterVersion];
+    [sdk addWrapperWithName:@"AppLovin" version:kAdapterVersion];
 }
 
 - (NSString *)SDKVersion {
