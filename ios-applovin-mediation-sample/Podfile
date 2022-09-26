@@ -4,7 +4,5 @@ use_frameworks!
 workspace 'ios-applovin-mediation-sample'
 
 target 'ios-applovin-mediation-sample' do
-  pod 'AppLovinSDK', '~> 11.3.0'
-  pod 'StartAppSDK', '~> 4.7.0'
   pod 'startio-applovin-mediation', :path => '../'
 end

@@ -66,10 +66,10 @@
                 maAdapterErrorCode = MAAdapterError.errorCodeUnspecified;
                 break;
         }
-        adapterError = [MAAdapterError errorWithCode:maAdapterErrorCode errorString:error.localizedDescription thirdPartySdkErrorCode:error.code thirdPartySdkErrorMessage:error.localizedDescription];
+        adapterError = [MAAdapterError errorWithCode:maAdapterErrorCode errorString:error.localizedDescription mediatedNetworkErrorCode:error.code mediatedNetworkErrorMessage:error.localizedDescription];
     }
     else {
-        adapterError = [MAAdapterError errorWithCode:MAAdapterError.errorCodeUnspecified errorString:@"StartAppSDK failed to load ad" thirdPartySdkErrorCode:-1 thirdPartySdkErrorMessage:@"Error not set"];
+        adapterError = [MAAdapterError errorWithCode:MAAdapterError.errorCodeUnspecified errorString:@"StartAppSDK failed to load ad" mediatedNetworkErrorCode:-1 mediatedNetworkErrorMessage:@"Error not set"];
     }
     return adapterError;
 }

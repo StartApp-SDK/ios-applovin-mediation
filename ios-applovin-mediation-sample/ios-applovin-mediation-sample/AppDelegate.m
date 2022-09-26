@@ -28,7 +28,7 @@
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
     [ALSdk shared].mediationProvider = @"max";
     [ALSdk shared].userIdentifier = @"USER_ID";
-    [ALSdk shared].settings.isVerboseLogging = YES;
+    [ALSdk shared].settings.verboseLoggingEnabled = YES;
     [[ALSdk shared] initializeSdkWithCompletionHandler:^(ALSdkConfiguration *configuration) {
         // Start loading ads
     }];
