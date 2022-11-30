@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "startio-applovin-mediation"
-  spec.version      = "1.1.2"
+  spec.version      = "1.1.3"
   spec.summary      = "Start.io <-> AppLovin MAX iOS Mediation Adapter."
 
   spec.description  = <<-DESC

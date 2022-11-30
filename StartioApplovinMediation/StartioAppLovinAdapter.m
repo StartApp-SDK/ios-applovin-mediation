@@ -19,9 +19,9 @@
 #import "StartioAppLovinInterstitialAdapter.h"
 #import "StartioAppLovinRewardedAdapter.h"
 #import "StartioAppLovinNativeAdapter.h"
-#import <StartApp/StartApp.h>
+@import StartApp;
 
-static NSString * const kAdapterVersion = @"1.0.1";
+static NSString * const kAdapterVersion = @"1.1.3";
 
 static NSString * const kAppIdKey = @"app_id";
 
@@ -37,16 +37,10 @@ static NSString * const kAppIdKey = @"app_id";
 - (void)initializeWithParameters:(id<MAAdapterInitializationParameters>)parameters completionHandler:(nonnull void (^)(MAAdapterInitializationStatus, NSString * _Nullable))completionHandler {
     NSString *appID = parameters.serverParameters[kAppIdKey];
     if (appID.length != 0) {
-        if ([NSThread isMainThread]) {
+        [self executeBlockOnMainThread:^{
             [self setupStartioSDKWithAppID:appID parameters:parameters];
-            completionHandler(MAAdapterInitializationStatusInitializedSuccess, nil);
-        }
-        else {
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [self setupStartioSDKWithAppID:appID parameters:parameters];
-            });
-            completionHandler(MAAdapterInitializationStatusInitializedSuccess, nil);
-        }
+        }];
+        completionHandler(MAAdapterInitializationStatusInitializedSuccess, nil);
     }
     else {
         completionHandler(MAAdapterInitializationStatusInitializing, @"No Start.io AppID provided yet");
@@ -75,7 +69,11 @@ static NSString * const kAppIdKey = @"app_id";
 }
 
 - (NSString *)SDKVersion {
-    return [[STAStartAppSDK sharedInstance] version];
+    __block NSString *version = nil;
+    [self executeBlockOnMainThread:^{
+        version = [[STAStartAppSDK sharedInstance] version];
+    }];
+    return version;
 }
 
 - (NSString *)adapterVersion {
@@ -92,13 +90,17 @@ static NSString * const kAppIdKey = @"app_id";
 #pragma mark - MAAdViewAdapter methods
 - (void)loadAdViewAdForParameters:(id<MAAdapterResponseParameters>)parameters adFormat:(MAAdFormat *)adFormat andNotify:(id<MAAdViewAdapterDelegate>)delegate {
     self.adViewAdapter = [[StartioAppLovinAdViewAdapter alloc] init];
-    [self.adViewAdapter loadAdViewAdapterWithParameters:parameters adFormat:adFormat andNotify:delegate];
+    [self executeBlockOnMainThread:^{
+        [self.adViewAdapter loadAdViewAdapterWithParameters:parameters adFormat:adFormat andNotify:delegate];
+    }];
 }
 
 #pragma mark - MAInterstitialAdapter methods
 - (void)loadInterstitialAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MAInterstitialAdapterDelegate>)delegate {
     self.interstitialAdapter = [[StartioAppLovinInterstitialAdapter alloc] init];
-    [self.interstitialAdapter loadInterstitialAdForParameters:parameters andNotify:delegate];
+    [self executeBlockOnMainThread:^{
+        [self.interstitialAdapter loadInterstitialAdForParameters:parameters andNotify:delegate];
+    }];
 }
 
 - (void)showInterstitialAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MAInterstitialAdapterDelegate>)delegate {
@@ -108,7 +110,9 @@ static NSString * const kAppIdKey = @"app_id";
 #pragma mark - MARewardedAdapter methods
 - (void)loadRewardedAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MARewardedAdapterDelegate>)delegate {
     self.rewardedAdapter = [[StartioAppLovinRewardedAdapter alloc] init];
-    [self.rewardedAdapter loadRewardedAdForParameters:parameters andNotify:delegate];
+    [self executeBlockOnMainThread:^{
+        [self.rewardedAdapter loadRewardedAdForParameters:parameters andNotify:delegate];
+    }];
 }
 
 - (void)showRewardedAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MARewardedAdapterDelegate>)delegate {
@@ -118,6 +122,20 @@ static NSString * const kAppIdKey = @"app_id";
 #pragma mark - MANativeAdAdapter methods
 - (void)loadNativeAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MANativeAdAdapterDelegate>)delegate {
     self.nativeAdapter = [[StartioAppLovinNativeAdapter alloc] init];
-    [self.nativeAdapter loadNativeAdForParameters:parameters andNotify:delegate];
+    [self executeBlockOnMainThread:^{
+        [self.nativeAdapter loadNativeAdForParameters:parameters andNotify:delegate];
+    }];
+}
+
+#pragma mark - Helper methods
+- (void)executeBlockOnMainThread:(void(^)(void))block {
+    if ([NSThread isMainThread]) {
+        block();
+    }
+    else {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            block();
+        });
+    }
 }
 @end

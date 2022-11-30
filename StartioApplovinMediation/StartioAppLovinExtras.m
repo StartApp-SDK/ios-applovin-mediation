@@ -15,7 +15,7 @@
  */
 
 #import "StartioAppLovinExtras.h"
-#import <StartApp/StartApp.h>
+@import StartApp;
 
 static NSString* const kInterstitialMode = @"interstitialMode";
 static NSString* const kAdTag = @"adTag";

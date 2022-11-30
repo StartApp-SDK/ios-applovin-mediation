@@ -17,7 +17,7 @@
 #import "StartioAppLovinInterstitialAdapter.h"
 #import "StartioAppLovinAdapterError.h"
 #import "StartioAppLovinExtras.h"
-#import <StartApp/StartApp.h>
+@import StartApp;
 
 @interface StartioAppLovinInterstitialAdapter()<STADelegateProtocol>
 @property (nonatomic, strong) STAStartAppAd *interstitialAd;

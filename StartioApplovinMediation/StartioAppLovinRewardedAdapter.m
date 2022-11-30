@@ -17,7 +17,7 @@
 #import "StartioAppLovinRewardedAdapter.h"
 #import "StartioAppLovinAdapterError.h"
 #import "StartioAppLovinExtras.h"
-#import <StartApp/StartApp.h>
+@import StartApp;
 
 @interface StartioAppLovinRewardedAdapter()<STADelegateProtocol>
 @property (nonatomic, strong) STAStartAppAd *rewardedAd;

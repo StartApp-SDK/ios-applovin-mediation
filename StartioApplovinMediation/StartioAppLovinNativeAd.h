@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#import <AppLovinSDK/AppLovinSDK.h>
+@import AppLovinSDK;
 
 @class STANativeAdDetails;
 

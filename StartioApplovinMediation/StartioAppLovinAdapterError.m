@@ -15,7 +15,7 @@
  */
 
 #import "StartioAppLovinAdapterError.h"
-#import <StartApp/STAErrorCodes.h>
+@import StartApp;
 
 @implementation StartioAppLovinAdapterError
 + (MAAdapterError *)maAdapterErrorFromSTAError:(NSError *)error {
