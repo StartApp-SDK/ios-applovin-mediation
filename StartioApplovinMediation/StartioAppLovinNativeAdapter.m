@@ -18,7 +18,7 @@
 #import "StartioAppLovinAdapterError.h"
 #import "StartioAppLovinNativeAd.h"
 #import "StartioAppLovinExtras.h"
-#import <StartApp/StartApp.h>
+@import StartApp;
 
 @interface StartioAppLovinNativeAdapter()<STADelegateProtocol>
 @property (nonatomic, strong) STAStartAppNativeAd *nativeAd;
@@ -29,14 +29,12 @@
 @implementation StartioAppLovinNativeAdapter
 - (void)loadNativeAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MANativeAdAdapterDelegate>)delegate {
     StartioAppLovinExtras *extras = [[StartioAppLovinExtras alloc] initWithParamsDictionary:parameters.customParameters];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.delegate = delegate;
-        self.nativeAd = [[STAStartAppNativeAd alloc] init];
-        STANativeAdPreferences *nativeAdPrefs = extras.prefs;
-        nativeAdPrefs.adsNumber = 1;
-        nativeAdPrefs.autoBitmapDownload = YES;
-        [self.nativeAd loadAdWithDelegate:self withNativeAdPreferences:nativeAdPrefs];
-    });
+    self.delegate = delegate;
+    self.nativeAd = [[STAStartAppNativeAd alloc] init];
+    STANativeAdPreferences *nativeAdPrefs = extras.prefs;
+    nativeAdPrefs.adsNumber = 1;
+    nativeAdPrefs.autoBitmapDownload = YES;
+    [self.nativeAd loadAdWithDelegate:self withNativeAdPreferences:nativeAdPrefs];
 }
 
 - (MANativeAd *)maNativeAdFromSTANativeAdDetails:(STANativeAdDetails *)nativeAdDetails {

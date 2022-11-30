@@ -259,15 +259,7 @@ static let kMrecUnitId = @"<MREC_UNIT_ID>";
 }
 
 #pragma mark - MARewardedAdDelegate Protocol
-- (void)didCompleteRewardedVideoForAd:(nonnull MAAd *)ad {
-    [self logMessage:NSStringFromSelector(_cmd)];
-}
-
 - (void)didRewardUserForAd:(nonnull MAAd *)ad withReward:(nonnull MAReward *)reward {
-    [self logMessage:NSStringFromSelector(_cmd)];
-}
-
-- (void)didStartRewardedVideoForAd:(nonnull MAAd *)ad {
     [self logMessage:NSStringFromSelector(_cmd)];
 }
 

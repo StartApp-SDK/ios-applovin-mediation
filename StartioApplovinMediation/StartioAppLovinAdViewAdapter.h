@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
-#import <AppLovinSDK/AppLovinSDK.h>
+@import Foundation;
+@import AppLovinSDK;
 
 NS_ASSUME_NONNULL_BEGIN
 

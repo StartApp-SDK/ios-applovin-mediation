@@ -15,7 +15,7 @@
  */
 
 #import "StartioAppLovinNativeAd.h"
-#import <StartApp/StartApp.h>
+@import StartApp;
 
 @interface StartioAppLovinNativeAd()
 @property (nonatomic, strong) STANativeAdDetails *nativeAdDetails;
@@ -43,19 +43,8 @@
     return self;
 }
 
-- (void)prepareViewForInteraction:(MANativeAdView *)nativeAdView {
-    NSMutableArray *clickViews = [[NSMutableArray alloc] init];
-    if (nativeAdView.iconImageView) {
-        [clickViews addObject:nativeAdView.iconImageView];
-    }
-    if (nativeAdView.callToActionButton) {
-        [clickViews addObject:nativeAdView.callToActionButton];
-    }
-    
-    if (clickViews.count == 0) {
-        [clickViews addObject:nativeAdView];
-    }
-    
-    [self.nativeAdDetails registerViewForImpression:nativeAdView andViewsForClick:clickViews];
+- (BOOL)prepareForInteractionClickableViews:(NSArray<UIView *> *)clickableViews withContainer:(UIView *)container {
+    [self.nativeAdDetails registerViewForImpression:container andViewsForClick:clickableViews];
+    return YES;
 }
 @end

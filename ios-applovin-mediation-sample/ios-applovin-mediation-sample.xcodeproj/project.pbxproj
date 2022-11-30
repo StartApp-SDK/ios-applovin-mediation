@@ -378,7 +378,17 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/startio-applovin-mediation\"",
+					"\"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.5.5\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/AppLovinSDK\"",
+				);
 				GCC_PREFIX_HEADER = "$(TARGETNAME)/modern-objc.h";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/startio-applovin-mediation/startio_applovin_mediation.framework/Headers\"",
+				);
 				INFOPLIST_FILE = "ios-applovin-mediation-sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,6 +456,12 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/startio-applovin-mediation\"",
+					"\"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.5.5\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/AppLovinSDK\"",
+				);
 				GCC_PREFIX_HEADER = "$(TARGETNAME)/modern-objc.h";
 				INFOPLIST_FILE = "ios-applovin-mediation-sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

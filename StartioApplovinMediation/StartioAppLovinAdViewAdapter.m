@@ -17,7 +17,7 @@
 #import "StartioAppLovinAdViewAdapter.h"
 #import "StartioAppLovinAdapterError.h"
 #import "StartioAppLovinExtras.h"
-#import <StartApp/StartApp.h>
+@import StartApp;
 
 @interface StartioAppLovinAdViewAdapter()<STABannerDelegateProtocol>
 @property (nonatomic, strong) STABannerView *bannerView;
