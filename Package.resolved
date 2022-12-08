@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "applovin-max-swift-package",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
+      "state" : {
+        "revision" : "e37a60a8cac4feded506c12754e30fc47ebcdfaa",
+        "version" : "11.6.0"
+      }
+    },
+    {
+      "identity" : "ios-sdk-swift-package",
+      "kind" : "remoteSourceControl",
+      "location" : "https://gitlab.hosts-app.com/sdk/ios-sdk-swift-package.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "e827dcbee05eb342935ecf7f390a3d846dffcf7f"
+      }
+    }
+  ],
+  "version" : 2
+}
