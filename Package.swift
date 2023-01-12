@@ -32,13 +32,13 @@ let package = Package(
 
 extension Package.Dependency {
     static let  appLovin: Package.Dependency =
-        .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git", .upToNextMajor(from: "11.5.0"))
+        .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git", from: Version("11.5.0"))
 //        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", from: Version("9.13.0"))
-    static let startApp: Package.Dependency = .package(url: "https://gitlab.hosts-app.com/sdk/ios-sdk-swift-package.git", branch: "master")
+    static let startApp: Package.Dependency = .package(url: "https://github.com/StartApp-SDK/StartAppSDK-SwiftPackage.git", from: Version("4.9.0"))
 }
 
 extension Target.Dependency {
     static let AppLovinSDK: Target.Dependency = .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package")
 //    static let AppLovinSDKresources: Target.Dependency = .product(name: "AppLovinSDKResources", package: "AppLovin-MAX-Swift-Package")
-    static let StartApp: Target.Dependency = .product(name: "StartApp", package: "ios-sdk-swift-package")
+    static let StartApp: Target.Dependency = .product(name: "StartApp", package: "StartAppSDK-SwiftPackage")
 }

@@ -10,12 +10,12 @@
       }
     },
     {
-      "identity" : "ios-sdk-swift-package",
+      "identity" : "startappsdk-swiftpackage",
       "kind" : "remoteSourceControl",
-      "location" : "https://gitlab.hosts-app.com/sdk/ios-sdk-swift-package.git",
+      "location" : "https://github.com/StartApp-SDK/StartAppSDK-SwiftPackage.git",
       "state" : {
-        "branch" : "master",
-        "revision" : "e827dcbee05eb342935ecf7f390a3d846dffcf7f"
+        "revision" : "be303f4784dc187311955aa0c0cdce31a37f83f8",
+        "version" : "4.9.0"
       }
     }
   ],
