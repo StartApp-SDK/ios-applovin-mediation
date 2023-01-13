@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,16 @@
 		49EBBE312667B17B0043E60D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EBBE2F2667B17B0043E60D /* LaunchScreen.storyboard */; };
 		49EBBE342667B17B0043E60D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EBBE332667B17B0043E60D /* main.m */; };
 		B07270F0946D8D66B3743742 /* Pods_ios_applovin_mediation_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FF8E61DD394C50F6C836EF /* Pods_ios_applovin_mediation_sample.framework */; };
+		D367773729422D0500CBC322 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EBBE282667B1750043E60D /* ViewController.m */; };
+		D367773829422D0500CBC322 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EBBE222667B1750043E60D /* AppDelegate.m */; };
+		D367773929422D0500CBC322 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EBBE332667B17B0043E60D /* main.m */; };
+		D367773A29422D0500CBC322 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EBBE252667B1750043E60D /* SceneDelegate.m */; };
+		D367773C29422D0500CBC322 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BE33C627B276B70057577D /* AppTrackingTransparency.framework */; };
+		D367773F29422D0500CBC322 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7EAB0FB27C639FF00C5C808 /* NativeAdView.xib */; };
+		D367774029422D0500CBC322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EBBE2F2667B17B0043E60D /* LaunchScreen.storyboard */; };
+		D367774129422D0500CBC322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EBBE2D2667B17B0043E60D /* Assets.xcassets */; };
+		D367774229422D0500CBC322 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EBBE2A2667B1750043E60D /* Main.storyboard */; };
+		D39420432971A20A005AA629 /* StartioApplovinMediation in Frameworks */ = {isa = PBXBuildFile; productRef = D39420422971A20A005AA629 /* StartioApplovinMediation */; };
 		E7BE33C727B276B70057577D /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BE33C627B276B70057577D /* AppTrackingTransparency.framework */; };
 		E7EAB0FC27C639FF00C5C808 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7EAB0FB27C639FF00C5C808 /* NativeAdView.xib */; };
 /* End PBXBuildFile section */
@@ -35,6 +45,8 @@
 		49EBBE332667B17B0043E60D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49EBBE3A2667B2C40043E60D /* modern-objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "modern-objc.h"; sourceTree = "<group>"; };
 		53FF8E61DD394C50F6C836EF /* Pods_ios_applovin_mediation_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_applovin_mediation_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D367774729422D0500CBC322 /* ios-applovin-mediation-sample-spm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-applovin-mediation-sample-spm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D367774A294237BD00CBC322 /* ios-applovin-mediation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "ios-applovin-mediation"; path = ..; sourceTree = "<group>"; };
 		E7BE33C627B276B70057577D /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		E7E59EB427BE918B0075AC4C /* ios-applovin-mediation-sample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ios-applovin-mediation-sample.entitlements"; sourceTree = "<group>"; };
 		E7EAB0FB27C639FF00C5C808 /* NativeAdView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NativeAdView.xib; sourceTree = "<group>"; };
@@ -49,6 +61,15 @@
 			files = (
 				E7BE33C727B276B70057577D /* AppTrackingTransparency.framework in Frameworks */,
 				B07270F0946D8D66B3743742 /* Pods_ios_applovin_mediation_sample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D367773B29422D0500CBC322 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D367773C29422D0500CBC322 /* AppTrackingTransparency.framework in Frameworks */,
+				D39420432971A20A005AA629 /* StartioApplovinMediation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +88,7 @@
 		49EBBE152667B1750043E60D = {
 			isa = PBXGroup;
 			children = (
+				D3677749294237BD00CBC322 /* Packages */,
 				49EBBE202667B1750043E60D /* ios-applovin-mediation-sample */,
 				49EBBE1F2667B1750043E60D /* Products */,
 				DD8AF4E67783142C3C07F991 /* Frameworks */,
@@ -78,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				49EBBE1E2667B1750043E60D /* ios-applovin-mediation-sample.app */,
+				D367774729422D0500CBC322 /* ios-applovin-mediation-sample-spm.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,6 +124,14 @@
 				E7EAB0FB27C639FF00C5C808 /* NativeAdView.xib */,
 			);
 			path = "ios-applovin-mediation-sample";
+			sourceTree = "<group>";
+		};
+		D3677749294237BD00CBC322 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				D367774A294237BD00CBC322 /* ios-applovin-mediation */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 		DD8AF4E67783142C3C07F991 /* Frameworks */ = {
@@ -135,6 +166,26 @@
 			productReference = 49EBBE1E2667B1750043E60D /* ios-applovin-mediation-sample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D367773429422D0500CBC322 /* ios-applovin-mediation-sample-spm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D367774429422D0500CBC322 /* Build configuration list for PBXNativeTarget "ios-applovin-mediation-sample-spm" */;
+			buildPhases = (
+				D367773629422D0500CBC322 /* Sources */,
+				D367773B29422D0500CBC322 /* Frameworks */,
+				D367773E29422D0500CBC322 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ios-applovin-mediation-sample-spm";
+			packageProductDependencies = (
+				D39420422971A20A005AA629 /* StartioApplovinMediation */,
+			);
+			productName = "ios-admob-mediation-sample";
+			productReference = D367774729422D0500CBC322 /* ios-applovin-mediation-sample-spm.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -162,6 +213,7 @@
 			projectRoot = "";
 			targets = (
 				49EBBE1D2667B1750043E60D /* ios-applovin-mediation-sample */,
+				D367773429422D0500CBC322 /* ios-applovin-mediation-sample-spm */,
 			);
 		};
 /* End PBXProject section */
@@ -175,6 +227,17 @@
 				49EBBE312667B17B0043E60D /* LaunchScreen.storyboard in Resources */,
 				49EBBE2E2667B17B0043E60D /* Assets.xcassets in Resources */,
 				49EBBE2C2667B1750043E60D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D367773E29422D0500CBC322 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D367773F29422D0500CBC322 /* NativeAdView.xib in Resources */,
+				D367774029422D0500CBC322 /* LaunchScreen.storyboard in Resources */,
+				D367774129422D0500CBC322 /* Assets.xcassets in Resources */,
+				D367774229422D0500CBC322 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +294,17 @@
 				49EBBE232667B1750043E60D /* AppDelegate.m in Sources */,
 				49EBBE342667B17B0043E60D /* main.m in Sources */,
 				49EBBE262667B1750043E60D /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D367773629422D0500CBC322 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D367773729422D0500CBC322 /* ViewController.m in Sources */,
+				D367773829422D0500CBC322 /* AppDelegate.m in Sources */,
+				D367773929422D0500CBC322 /* main.m in Sources */,
+				D367773A29422D0500CBC322 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +458,7 @@
 					"\"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.5.5\"",
 					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/AppLovinSDK\"",
 				);
-				GCC_PREFIX_HEADER = "$(TARGETNAME)/modern-objc.h";
+				GCC_PREFIX_HEADER = "ios-applovin-mediation-sample/modern-objc.h";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/startio-applovin-mediation/startio_applovin_mediation.framework/Headers\"",
@@ -462,7 +536,7 @@
 					"\"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.5.5\"",
 					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/AppLovinSDK\"",
 				);
-				GCC_PREFIX_HEADER = "$(TARGETNAME)/modern-objc.h";
+				GCC_PREFIX_HEADER = "ios-applovin-mediation-sample/modern-objc.h";
 				INFOPLIST_FILE = "ios-applovin-mediation-sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -520,6 +594,132 @@
 			};
 			name = Release;
 		};
+		D367774529422D0500CBC322 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ios-applovin-mediation-sample/ios-applovin-mediation-sample.entitlements";
+				GCC_PREFIX_HEADER = "ios-applovin-mediation-sample/modern-objc.h";
+				INFOPLIST_FILE = "ios-applovin-mediation-sample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"WebKit\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"JavaScriptCore\"",
+					"-weak_framework",
+					"\"SafariServices\"",
+					"-weak_framework",
+					"\"WebKit\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.start.iosapplovinmediationsample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D367774629422D0500CBC322 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ios-applovin-mediation-sample/ios-applovin-mediation-sample.entitlements";
+				GCC_PREFIX_HEADER = "ios-applovin-mediation-sample/modern-objc.h";
+				INFOPLIST_FILE = "ios-applovin-mediation-sample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"WebKit\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"JavaScriptCore\"",
+					"-weak_framework",
+					"\"SafariServices\"",
+					"-weak_framework",
+					"\"WebKit\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.start.iosapplovinmediationsample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -541,7 +741,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		D367774429422D0500CBC322 /* Build configuration list for PBXNativeTarget "ios-applovin-mediation-sample-spm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D367774529422D0500CBC322 /* Debug */,
+				D367774629422D0500CBC322 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D39420422971A20A005AA629 /* StartioApplovinMediation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StartioApplovinMediation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 49EBBE162667B1750043E60D /* Project object */;
 }
