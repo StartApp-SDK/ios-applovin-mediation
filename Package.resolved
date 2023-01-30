@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "applovin-max-swift-package",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
+      "state" : {
+        "revision" : "e37a60a8cac4feded506c12754e30fc47ebcdfaa",
+        "version" : "11.6.0"
+      }
+    },
+    {
+      "identity" : "startappsdk-swiftpackage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/StartApp-SDK/StartAppSDK-SwiftPackage.git",
+      "state" : {
+        "revision" : "be303f4784dc187311955aa0c0cdce31a37f83f8",
+        "version" : "4.9.0"
+      }
+    }
+  ],
+  "version" : 2
+}
