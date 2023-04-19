@@ -27,9 +27,11 @@
 @implementation StartioAppLovinRewardedAdapter
 - (void)loadRewardedAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MARewardedAdapterDelegate>)delegate {
     StartioAppLovinExtras *extras = [[StartioAppLovinExtras alloc] initWithParamsDictionary:parameters.customParameters];
+    STAAdPreferences *startAppAdPreferences = extras.prefs;
+    startAppAdPreferences.placementId = [StartioAppLovinExtras placementIdFromAdapterResponseParameters:parameters];
     self.delegate = delegate;
     self.rewardedAd = [[STAStartAppAd alloc] init];
-    [self.rewardedAd loadRewardedVideoAdWithDelegate:self withAdPreferences:extras.prefs];
+    [self.rewardedAd loadRewardedVideoAdWithDelegate:self withAdPreferences:startAppAdPreferences];
 }
 
 - (void)showRewardedAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MARewardedAdapterDelegate>)delegate {

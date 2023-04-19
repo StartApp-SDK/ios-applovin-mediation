@@ -27,9 +27,11 @@
 @implementation StartioAppLovinInterstitialAdapter
 - (void)loadInterstitialAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MAInterstitialAdapterDelegate>)delegate {
     StartioAppLovinExtras *extras = [[StartioAppLovinExtras alloc] initWithParamsDictionary:parameters.customParameters];
+    STAAdPreferences *startAppAdPreferences = extras.prefs;
+    startAppAdPreferences.placementId = [StartioAppLovinExtras placementIdFromAdapterResponseParameters:parameters];
     self.delegate = delegate;
     self.interstitialAd = [[STAStartAppAd alloc] init];
-    [self.interstitialAd loadAdWithDelegate:self withAdPreferences:extras.prefs];
+    [self.interstitialAd loadAdWithDelegate:self withAdPreferences:startAppAdPreferences];
 }
 
 - (void)showInterstitialAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MAInterstitialAdapterDelegate>)delegate {
