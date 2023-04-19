@@ -16,6 +16,7 @@
 
 #import "StartioAppLovinExtras.h"
 @import StartApp;
+@import AppLovinSDK;
 
 static NSString* const kInterstitialMode = @"interstitialMode";
 static NSString* const kAdTag = @"adTag";
@@ -81,6 +82,11 @@ static STANativeAdBitmapSize stringToBitmapSize(NSString* format) {
     if (params[kNativeSecondaryImageSize]) {
         self.prefs.secondaryImageSize = stringToBitmapSize(params[kNativeSecondaryImageSize]);
     }
+}
+
++ (nullable NSString *)placementIdFromAdapterResponseParameters:(nullable id<MAAdapterResponseParameters>)parameters {
+    
+    return parameters.adUnitIdentifier.length > 0 ?  parameters.adUnitIdentifier : nil;
 }
 
 @end

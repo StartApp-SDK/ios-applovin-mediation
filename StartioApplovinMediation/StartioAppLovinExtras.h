@@ -20,10 +20,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class STANativeAdPreferences;
+@protocol MAAdapterResponseParameters;
 
 @interface StartioAppLovinExtras : NSObject
 
 - (instancetype)initWithParamsDictionary:(nullable NSDictionary *)params;
++ (nullable NSString *)placementIdFromAdapterResponseParameters:(nullable id<MAAdapterResponseParameters>)parameters;
 
 @property (nonatomic, getter=isVideo) BOOL video;
 @property (nonatomic, copy) STANativeAdPreferences* prefs;
