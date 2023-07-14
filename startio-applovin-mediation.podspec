@@ -24,6 +24,6 @@ Pod::Spec.new do |spec|
   spec.user_target_xcconfig = { 'ONLY_ACTIVE_ARCH' => 'YES' } 
   
   spec.dependency "AppLovinSDK", "~> 11"
-  spec.dependency "StartAppSDK", ">= 4.9.2", "< 5"
+  spec.dependency "StartAppSDK", ">= 4.10.0", "< 5"
 
 end

@@ -32,7 +32,7 @@ let package = Package(
 extension Package.Dependency {
     static let  appLovin: Package.Dependency =
         .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git", from: Version("11.5.0"))
-    static let startApp: Package.Dependency = .package(url: "https://github.com/StartApp-SDK/StartAppSDK-SwiftPackage.git", from: Version("4.9.2"))
+    static let startApp: Package.Dependency = .package(url: "https://github.com/StartApp-SDK/StartAppSDK-SwiftPackage.git", from: Version("4.10.0"))
 }
 
 extension Target.Dependency {

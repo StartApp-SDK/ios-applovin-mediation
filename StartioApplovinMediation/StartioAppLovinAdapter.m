@@ -49,7 +49,6 @@ static NSString * const kAppIdKey = @"app_id";
 
 - (void)setupStartioSDKWithAppID:(NSString *)appID parameters:(id<MAAdapterInitializationParameters>)parameters {
     STAStartAppSDK *sdk = [STAStartAppSDK sharedInstance];
-    sdk.returnAdEnabled = NO;
     sdk.appID = appID;
     [sdk handleExtras:^(NSMutableDictionary<NSString *,id> *extras) {
         if (parameters.hasUserConsent) {
@@ -65,7 +64,7 @@ static NSString * const kAppIdKey = @"app_id";
         }
     }];
     
-    [sdk addWrapperWithName:@"AppLovin" version:kAdapterVersion];
+    [sdk enableMediationModeFor:@"AppLovin" version:kAdapterVersion];
 }
 
 - (NSString *)SDKVersion {
