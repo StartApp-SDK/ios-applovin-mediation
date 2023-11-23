@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "startio-applovin-mediation"
-  spec.version      = "1.2.4"
+  spec.version      = "2.0.0"
   spec.summary      = "Start.io <-> AppLovin MAX iOS Mediation Adapter."
 
   spec.description  = <<-DESC
@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
   spec.author       = { "iOS Dev" => "iosdev@startapp.com" }
   
-  spec.platform     = :ios, "10.0"
+  spec.platform     = :ios, "12.0"
   spec.source       = { :git => "https://github.com/StartApp-SDK/ios-applovin-mediation.git", :tag => spec.version.to_s }
   spec.source_files = "StartioApplovinMediation/*.{h,m}"
 
@@ -23,7 +23,7 @@ Pod::Spec.new do |spec|
 
   spec.user_target_xcconfig = { 'ONLY_ACTIVE_ARCH' => 'YES' } 
   
-  spec.dependency "AppLovinSDK", "~> 11"
-  spec.dependency "StartAppSDK", ">= 4.10.0", "< 5"
+  spec.dependency "AppLovinSDK", "~> 12.0"
+  spec.dependency "StartAppSDK", "~> 4.10"
 
 end
