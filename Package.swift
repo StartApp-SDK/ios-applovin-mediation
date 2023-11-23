@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "StartioApplovinMediation",
-    platforms: [.iOS(.v11)],
+    platforms: [.iOS(.v12)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -31,7 +31,7 @@ let package = Package(
 
 extension Package.Dependency {
     static let  appLovin: Package.Dependency =
-        .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git", from: Version("11.5.0"))
+        .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git", from: Version("12.0.0"))
     static let startApp: Package.Dependency = .package(url: "https://github.com/StartApp-SDK/StartAppSDK-SwiftPackage.git", from: Version("4.10.0"))
 }
 
