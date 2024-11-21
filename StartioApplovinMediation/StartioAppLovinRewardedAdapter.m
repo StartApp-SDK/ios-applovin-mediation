@@ -56,9 +56,6 @@
     if ([self.delegate respondsToSelector:@selector(didDisplayRewardedAd)]) {
         [self.delegate didDisplayRewardedAd];
     }
-    if ([self.delegate respondsToSelector:@selector(didStartRewardedAdVideo)]) {
-        [self.delegate didStartRewardedAdVideo];
-    }
 }
 
 - (void)failedShowAd:(STAAbstractAd *)ad withError:(NSError *)error {
@@ -68,9 +65,6 @@
 }
 
 - (void)didCompleteVideo:(STAAbstractAd *)ad {
-    if ([self.delegate respondsToSelector:@selector(didCompleteRewardedAdVideo)]) {
-        [self.delegate didCompleteRewardedAdVideo];
-    }
     if ([self.delegate respondsToSelector:@selector(didRewardUserWithReward:)]) {
         [self.delegate didRewardUserWithReward:[MAReward rewardWithAmount:MAReward.defaultAmount label:MAReward.defaultLabel]];
     }

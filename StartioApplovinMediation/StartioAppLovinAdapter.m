@@ -21,7 +21,7 @@
 #import "StartioAppLovinNativeAdapter.h"
 @import StartApp;
 
-static NSString * const kAdapterVersion = @"1.2.4";
+static NSString * const kAdapterVersion = @"2.0.1";
 
 static NSString * const kAppIdKey = @"app_id";
 
@@ -53,10 +53,6 @@ static NSString * const kAppIdKey = @"app_id";
     [sdk handleExtras:^(NSMutableDictionary<NSString *,id> *extras) {
         if (parameters.hasUserConsent) {
             extras[@"medPas"] = parameters.hasUserConsent;
-        }
-        
-        if (parameters.ageRestrictedUser) {
-            extras[@"medAgeRestrict"] = parameters.ageRestrictedUser;
         }
         
         if (parameters.doNotSell) {
