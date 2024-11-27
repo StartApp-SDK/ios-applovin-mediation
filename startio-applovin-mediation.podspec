@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "startio-applovin-mediation"
-  spec.version      = "2.0.1"
+  spec.version      = "2.0.2"
   spec.summary      = "Start.io <-> AppLovin MAX iOS Mediation Adapter."
 
   spec.description  = <<-DESC
@@ -23,7 +23,7 @@ Pod::Spec.new do |spec|
 
   spec.user_target_xcconfig = { 'ONLY_ACTIVE_ARCH' => 'YES' } 
   
-  spec.dependency "AppLovinSDK", "~> 13.0"
+  spec.dependency "AppLovinSDK", ">= 12", "< 14"
   spec.dependency "StartAppSDK", "~> 4.10"
 
 end
