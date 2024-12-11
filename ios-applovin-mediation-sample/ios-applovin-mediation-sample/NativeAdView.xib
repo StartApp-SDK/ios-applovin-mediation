@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,10 +15,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU7-ts-SR7" userLabel="imgViewIcon">
-                    <rect key="frame" x="4" y="4" width="100" height="100"/>
+                    <rect key="frame" x="8" y="141" width="50" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="kn5-R1-YCa"/>
-                        <constraint firstAttribute="width" constant="100" id="thz-mX-FPH"/>
+                        <constraint firstAttribute="height" constant="50" id="kn5-R1-YCa"/>
+                        <constraint firstAttribute="width" constant="50" id="thz-mX-FPH"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfW-uH-VOf" userLabel="lblTitle">
@@ -37,7 +37,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcr-Bf-I9O" userLabel="btnAction">
-                    <rect key="frame" x="8" y="141" width="284" height="50"/>
+                    <rect key="frame" x="66" y="141" width="226" height="50"/>
                     <color key="backgroundColor" systemColor="linkColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="8eh-pQ-HTI"/>
@@ -46,20 +46,29 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="Button"/>
                 </button>
+                <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ll-Hm-LJD" userLabel="imgViewAdBitmap">
+                    <rect key="frame" x="8" y="8" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Ni9-Ce-7Ba"/>
+                        <constraint firstAttribute="width" constant="100" id="TBL-x8-EbS"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="HfW-uH-VOf" firstAttribute="leading" secondItem="eU7-ts-SR7" secondAttribute="trailing" constant="8" symbolic="YES" id="4rJ-Jr-nKg"/>
-                <constraint firstItem="eU7-ts-SR7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="5Cb-dh-p0m"/>
-                <constraint firstItem="eU7-ts-SR7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="9S8-Vt-lYA"/>
+                <constraint firstItem="eU7-ts-SR7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="5Cb-dh-p0m"/>
+                <constraint firstAttribute="bottom" secondItem="eU7-ts-SR7" secondAttribute="bottom" constant="9" id="6wi-qY-sPR"/>
                 <constraint firstAttribute="trailing" secondItem="HfW-uH-VOf" secondAttribute="trailing" constant="8" id="BJf-uO-KB7"/>
                 <constraint firstItem="HfW-uH-VOf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Lo6-Fn-H3Y"/>
+                <constraint firstItem="HfW-uH-VOf" firstAttribute="leading" secondItem="6ll-Hm-LJD" secondAttribute="trailing" constant="4" id="Oga-98-WDR"/>
                 <constraint firstItem="qcr-Bf-I9O" firstAttribute="top" secondItem="PhV-DS-Coy" secondAttribute="bottom" constant="8" symbolic="YES" id="SWr-7J-ovY"/>
+                <constraint firstItem="6ll-Hm-LJD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="UAe-pO-KeZ"/>
                 <constraint firstAttribute="bottom" secondItem="qcr-Bf-I9O" secondAttribute="bottom" constant="9" id="YjJ-ie-6RJ"/>
+                <constraint firstItem="qcr-Bf-I9O" firstAttribute="leading" secondItem="eU7-ts-SR7" secondAttribute="trailing" constant="8" id="apL-qg-rSx"/>
                 <constraint firstItem="PhV-DS-Coy" firstAttribute="top" secondItem="HfW-uH-VOf" secondAttribute="bottom" constant="3" id="eGT-d9-6y4"/>
                 <constraint firstItem="PhV-DS-Coy" firstAttribute="leading" secondItem="HfW-uH-VOf" secondAttribute="leading" id="fTz-6Y-Kg5"/>
-                <constraint firstItem="qcr-Bf-I9O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="gPt-Ni-XR4"/>
                 <constraint firstAttribute="trailing" secondItem="qcr-Bf-I9O" secondAttribute="trailing" constant="8" id="hot-l4-I5G"/>
+                <constraint firstItem="6ll-Hm-LJD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="qym-Zz-fii"/>
                 <constraint firstItem="PhV-DS-Coy" firstAttribute="trailing" secondItem="HfW-uH-VOf" secondAttribute="trailing" id="u1E-qW-xUt"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>

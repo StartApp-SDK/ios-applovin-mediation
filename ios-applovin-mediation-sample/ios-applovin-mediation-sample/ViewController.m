@@ -86,12 +86,13 @@ static let kMrecUnitId = @"<MREC_UNIT_ID>";
 - (IBAction)loadNative:(UIButton*)sender {
     self.nativeAdLoader = [[MANativeAdLoader alloc] initWithAdUnitIdentifier:kNativeUnitId];
     self.nativeAdLoader.nativeAdDelegate = self;
+    self.nativeAdLoader.revenueDelegate = self;
 //    Use next lines in case of Native Ad with manual layout
-//    self.nativeAdView = [self createNativeAdView];
-//    [self.nativeAdLoader loadAdIntoAdView:self.nativeAdView];
+    self.nativeAdView = [self createNativeAdView];
+    [self.nativeAdLoader loadAdIntoAdView:self.nativeAdView];
     
 //    Use next line in case of Native Ad with template layout
-    [self.nativeAdLoader loadAd];
+//    [self.nativeAdLoader loadAd];
 }
 
 - (IBAction)showNative:(UIButton*)sender {
@@ -108,6 +109,7 @@ static let kMrecUnitId = @"<MREC_UNIT_ID>";
         builder.titleLabelTag = 2;
         builder.bodyLabelTag = 3;
         builder.callToActionButtonTag = 4;
+        builder.mediaContentViewTag = 5;
     }];
     [nativeAdView bindViewsWithAdViewBinder:binder];
     return nativeAdView;
