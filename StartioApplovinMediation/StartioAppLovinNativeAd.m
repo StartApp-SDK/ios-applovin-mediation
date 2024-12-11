@@ -24,21 +24,34 @@
 @implementation StartioAppLovinNativeAd
 
 - (instancetype)initWithSTANAtiveAdDetails:(STANativeAdDetails *)nativeAdDetails {
-    MANativeAdImage *nativeAdImage = nil;
+    MANativeAdImage *mainImage = nil;
     if (nativeAdDetails.imageBitmap) {
-        nativeAdImage = [[MANativeAdImage alloc] initWithImage:nativeAdDetails.imageBitmap];
+        mainImage = [[MANativeAdImage alloc] initWithImage:nativeAdDetails.imageBitmap];
     }
     else {
-        nativeAdImage = [[MANativeAdImage alloc] initWithURL:[NSURL URLWithString:nativeAdDetails.imageUrl]];
+        mainImage = [[MANativeAdImage alloc] initWithURL:[NSURL URLWithString:nativeAdDetails.imageUrl]];
+    }
+    
+    MANativeAdImage *iconImage = nil;
+    if (nativeAdDetails.secondaryImageBitmap) {
+        iconImage = [[MANativeAdImage alloc] initWithImage:nativeAdDetails.secondaryImageBitmap];
+    }
+    else {
+        iconImage = [[MANativeAdImage alloc] initWithURL:[NSURL URLWithString:nativeAdDetails.secondaryImageUrl]];
     }
     self = [super initWithFormat:MAAdFormat.native builderBlock:^(MANativeAdBuilder * _Nonnull builder) {
         builder.title = nativeAdDetails.title;
         builder.body = nativeAdDetails.description;
         builder.callToAction = nativeAdDetails.callToAction;
-        builder.icon = nativeAdImage;
+        builder.mainImage = mainImage;
+        builder.icon = iconImage;
+        if (nativeAdDetails.imageBitmap) {
+            builder.mediaView = [[UIImageView alloc] initWithImage:nativeAdDetails.imageBitmap];
+            builder.mediaContentAspectRatio = nativeAdDetails.imageBitmap.size.width / nativeAdDetails.imageBitmap.size.height;
+        }
     }];
     if (self) {
-        self.nativeAdDetails = nativeAdDetails;
+        _nativeAdDetails = nativeAdDetails;
     }
     return self;
 }
