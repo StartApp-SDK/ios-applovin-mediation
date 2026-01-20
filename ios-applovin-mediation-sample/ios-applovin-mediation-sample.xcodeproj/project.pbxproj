@@ -28,6 +28,19 @@
 		E7EAB0FC27C639FF00C5C808 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7EAB0FB27C639FF00C5C808 /* NativeAdView.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BBA0DB352EA799720061769E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		49E0C5A0266F56CB0003B461 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		49EBBE1E2667B1750043E60D /* ios-applovin-mediation-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-applovin-mediation-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +159,7 @@
 				49EBBE1A2667B1750043E60D /* Sources */,
 				49EBBE1B2667B1750043E60D /* Frameworks */,
 				49EBBE1C2667B1750043E60D /* Resources */,
+				BBA0DB352EA799720061769E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

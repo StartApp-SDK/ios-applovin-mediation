@@ -26,11 +26,12 @@
 
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
-    [ALSdk shared].mediationProvider = @"max";
-    [ALSdk shared].userIdentifier = @"USER_ID";
+    ALSdkInitializationConfiguration *initConfig = [ALSdkInitializationConfiguration configurationWithSdkKey: @"«SDK-key»" builderBlock:^(ALSdkInitializationConfigurationBuilder *builder) {
+        builder.mediationProvider = ALMediationProviderMAX;
+    }];
+    [ALSdk shared].settings.userIdentifier = @"USER_ID";
     [ALSdk shared].settings.verboseLoggingEnabled = YES;
-    [[ALSdk shared] initializeSdkWithCompletionHandler:^(ALSdkConfiguration *configuration) {
-        // Start loading ads
+    [[ALSdk shared] initializeWithConfiguration:initConfig completionHandler:^(ALSdkConfiguration *sdkConfig) {
     }];
     return YES;
 }
