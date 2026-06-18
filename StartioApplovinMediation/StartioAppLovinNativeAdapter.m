@@ -34,7 +34,9 @@
     STANativeAdPreferences *nativeAdPrefs = extras.prefs;
     nativeAdPrefs.adsNumber = 1;
     nativeAdPrefs.autoBitmapDownload = YES;
-    nativeAdPrefs.placementId = [StartioAppLovinExtras placementIdFromAdapterResponseParameters:parameters];
+    if (nativeAdPrefs.adTag.length == 0) {
+        nativeAdPrefs.adTag = [StartioAppLovinExtras placementIdFromAdapterResponseParameters:parameters];
+    }
     [self.nativeAd loadAdWithDelegate:self withNativeAdPreferences:nativeAdPrefs];
 }
 

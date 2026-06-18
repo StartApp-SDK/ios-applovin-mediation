@@ -29,7 +29,9 @@
 - (void)loadAdViewAdapterWithParameters:(id<MAAdapterResponseParameters>)parameters adFormat:(MAAdFormat *)adFormat andNotify:(id<MAAdViewAdapterDelegate>)delegate {
     StartioAppLovinExtras *extras = [[StartioAppLovinExtras alloc] initWithParamsDictionary:parameters.customParameters];
     STAAdPreferences *startAppAdPreferences = extras.prefs;
-    startAppAdPreferences.placementId = [StartioAppLovinExtras placementIdFromAdapterResponseParameters:parameters];
+    if (startAppAdPreferences.adTag.length == 0) {
+        startAppAdPreferences.adTag = [StartioAppLovinExtras placementIdFromAdapterResponseParameters:parameters];
+    }
     self.delegate = delegate;
     STABannerSize bannerSize;
     if (adFormat == MAAdFormat.banner) {
