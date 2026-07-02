@@ -86,7 +86,6 @@ static let kMrecUnitId = @"<MREC_UNIT_ID>";
 - (IBAction)loadNative:(UIButton*)sender {
     self.nativeAdLoader = [[MANativeAdLoader alloc] initWithAdUnitIdentifier:kNativeUnitId];
     self.nativeAdLoader.nativeAdDelegate = self;
-    self.nativeAdLoader.revenueDelegate = self;
 //    Use next lines in case of Native Ad with manual layout
     self.nativeAdView = [self createNativeAdView];
     [self.nativeAdLoader loadAdIntoAdView:self.nativeAdView];
